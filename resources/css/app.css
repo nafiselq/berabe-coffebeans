@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Clicker';
+    src: url('../fonts/ClickerScript.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Playfair';
+    src: url('../fonts/PlayfairDisplay.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
