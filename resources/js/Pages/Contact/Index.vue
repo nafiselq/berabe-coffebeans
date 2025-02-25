@@ -7,10 +7,10 @@ import FooterSection from '@/Components/FooterSection.vue';
 <template>
     <Head title="Contact" />
     <PublicLayout>
-        <section class="relative bg-[url('/img/coffee_image.png')] bg-no-repeat bg-cover bg-center md:h-[90px] h-[595px]">
+        <section class="relative bg-[url('/img/coffee_image.png')] bg-no-repeat bg-cover bg-center h-[90px]">
             <div class="absolute inset-0 bg-black opacity-90"></div>
         </section>
-        <section class="flex flex-col justify-start items-center md:mt-[120px]">
+        <section class="flex flex-col justify-start items-center md:mt-[120px] mt-[40px] md:p-0 p-4">
             <h1 class="md:text-[40px] md:w-[60%] text-center text-gray-600 md:mt-[50px] font-bold">Contact Us</h1>
             <p class="text-gray-600 text-center mt-2">We'd love to hear from you! Fill out the form below.</p>
             <div class="w-full max-w-screen-lg">

@@ -41,12 +41,12 @@ const dataProduct = [
 <template>
     <Head title="Products" />
     <PublicLayout>
-        <section class="relative bg-[url('/img/coffee_image.png')] bg-no-repeat bg-cover bg-center md:h-[90px] h-[595px]">
+        <section class="relative bg-[url('/img/coffee_image.png')] bg-no-repeat bg-cover bg-center h-[90px]">
             <div class="absolute inset-0 bg-black opacity-90"></div>
         </section>
         <section class="flex flex-col justify-start items-center">
-            <h1 class="md:text-[40px] md:w-[60%] text-center text-gray-600 md:mt-[50px] font-bold">Our Products</h1>
-            <div class="flex flex-wrap justify-around items-center md:mt-[50px] md:w-screen">
+            <h1 class="md:text-[40px] md:w-[60%] text-center text-gray-600 md:mt-[50px] mt-[70px] font-bold">Our Products</h1>
+            <div class="flex flex-wrap justify-around items-center md:mt-[50px] mt-[70px] md:w-screen">
                 <CardProduct
                     v-for="product in dataProduct"
                     :key="product.id"

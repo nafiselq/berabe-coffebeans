@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-xs bg-cream rounded-lg shadow-lg overflow-hidden">
+    <div class="md:w-[300px] md:mt-0 mt-[20px] bg-cream rounded-lg shadow-lg overflow-hidden">
         <!-- Bagian Gambar -->
         <img src="/img/coffee_image.png" alt="Cappuccino" class="w-full h-60 object-cover">
 
@@ -10,10 +10,10 @@
             <p class="text-lg font-bold text-brown mt-2">$8.50</p>
 
             <!-- Tombol Order -->
-            <button
+            <!-- <button
                 class="mt-4 bg-yellow-400 text-brown font-semibold py-2 px-6 rounded-full shadow-md hover:bg-yellow-500 transition">
                 Order Now
-            </button>
+            </button> -->
         </div>
     </div>
 </template>
