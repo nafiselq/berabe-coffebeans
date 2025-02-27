@@ -1,7 +1,8 @@
 <template>
-  <button 
+  <button
     :class="computedClass"
     :disabled="disabled"
+    type="submit"
   >
     <slot name="icon"></slot>
     <span>{{ label }}</span>

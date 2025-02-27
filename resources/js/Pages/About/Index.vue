@@ -12,7 +12,7 @@ import { Head } from '@inertiajs/vue3';
             <div class="absolute inset-0 bg-black opacity-80"></div>
             <!-- Text Content -->
             <div class="overflow-hidden z-10 p-4 absolute
-                md:top-[55%] top-[55%] md:left-[29%] left-[150px] transform -translate-x-1/2 -translate-y-1/2
+                md:top-[55%] top-[55%] md:left-[24%] left-[150px] transform -translate-x-1/2 -translate-y-1/2
                 md:translate-x-0 md:left-21 md:right-auto flex flex-col justify-center md:items-center">
                 <h1 class="text-white text-[30px] md:text-7xl">Get to Know Insight</h1>
                 <p class="text-white md:text-xl md:mt-[30px] mt-[30px]">Who we are and what we do goes for beyond providing coffee solutions.</p>

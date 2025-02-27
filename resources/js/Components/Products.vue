@@ -1,13 +1,22 @@
+<script setup>
+import { defineProps } from 'vue';
+
+const props = defineProps({
+    product: Object
+});
+</script>
+
+
 <template>
     <div class="md:w-[300px] md:mt-0 mt-[20px] bg-cream rounded-lg shadow-lg overflow-hidden">
         <!-- Bagian Gambar -->
-        <img src="/img/coffee_image.png" alt="Cappuccino" class="w-full h-60 object-cover">
+        <img :src="`/storage/${product.photo}`" alt="Cappuccino" class="w-full h-60 object-cover">
 
         <!-- Bagian Informasi Produk -->
         <div class="p-5 text-center">
-            <h3 class="text-lg font-bold text-brown">Cappuccino</h3>
-            <p class="text-gray-700">Coffee 50% | Milk 50%</p>
-            <p class="text-lg font-bold text-brown mt-2">$8.50</p>
+            <h3 class="text-lg font-bold text-brown">{{ product.title }}</h3>
+            <p class="text-gray-700">{{ product.subtitle }}</p>
+            <!-- <p class="text-lg font-bold text-brown mt-2">$8.50</p> -->
 
             <!-- Tombol Order -->
             <!-- <button

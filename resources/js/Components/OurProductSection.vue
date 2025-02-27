@@ -1,5 +1,10 @@
 <script setup>
-import Products from './Products.vue';
+import Products from './Products.vue'
+import { defineProps } from 'vue';
+
+const props = defineProps({
+    products: Object
+});
 </script>
 
 <template>
@@ -7,10 +12,7 @@ import Products from './Products.vue';
         <h1 class="text-center md:text-[54px] text-[30px] text-primary font-bold">Enjoy our products</h1>
         <p class="text-center text-grey text-[20px]">Explore our selection of coffee bean products</p>
         <div class="md:flex md:flex-row flex-col justify-between mt-12">
-            <Products />
-            <Products />
-            <Products />
-            <Products />
+            <Products v-for="product in products" :key="product.id" :product="product" />
         </div>
     </div>
 </template>

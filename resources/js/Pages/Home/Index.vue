@@ -8,6 +8,11 @@ import AmazingSection from '@/Components/AmazingSection.vue';
 import FeedbackSection from '@/Components/FeedbackSection.vue';
 import FooterSection from '@/Components/FooterSection.vue';
 import { Head } from '@inertiajs/vue3';
+import { defineProps } from 'vue';
+
+const props = defineProps({
+    products: Object,
+});
 </script>
 
 <template>
@@ -15,7 +20,7 @@ import { Head } from '@inertiajs/vue3';
     <PublicLayout>
        <HeroSection />
        <DiscoverSection />
-       <OurProductSection />
+       <OurProductSection :products="products" />
        <DifferentSection />
        <AmazingSection />
        <FeedbackSection />

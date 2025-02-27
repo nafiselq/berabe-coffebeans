@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -16,12 +17,18 @@ class ProductController extends Controller
         return Inertia::render('Product/Index');
     }
 
+    public function indexAdmin()
+    {
+        $products = Product::paginate(10);
+        return Inertia::render('Admin/Products/Index', ['products' => $products]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return Inertia::render('Admin/Products/Create');
     }
 
     /**
@@ -29,7 +36,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:255',
+            'image' => 'required|image|max:2048'
+        ]);
+
+        $imagePath = $request->file('image')?->store('product', 'public');
+        
+        Product::create([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'photo' => $imagePath,
+        ]);
+
+        return redirect()->route('product');
     }
 
     /**
@@ -45,7 +66,8 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return Inertia::render('Admin/Products/Edit', ['product' => $product]);
     }
 
     /**
@@ -53,7 +75,26 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:255',
+            'image' => 'nullable|image|max:2048'
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('product', 'public');
+            $product->photo = $imagePath;
+        }
+
+        $product->update([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'photo' => $product->photo,
+        ]);
+
+        return redirect()->route('product');
     }
 
     /**
@@ -61,6 +102,10 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+
+        return redirect()->route('product');
     }
 }
