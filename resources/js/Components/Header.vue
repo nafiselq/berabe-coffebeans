@@ -55,6 +55,7 @@
 <script setup>
 import { ref } from "vue";
 import { Link } from "@inertiajs/vue3";
+import BaseButton from "./BaseButton.vue";
 
 const isMenuOpen = ref(false);
 

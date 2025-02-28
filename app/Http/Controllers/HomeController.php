@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Home;
 use App\Models\Product;
+use App\Models\Feedback;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,7 +16,11 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::orderBy('created_at', 'desc')->limit(4)->get();
-        return Inertia::render('Home/Index', ['products' => $products]);
+        $feedbacks = Feedback::orderBy('created_at', 'desc')->get();
+        return Inertia::render('Home/Index', [
+            'products' => $products,
+            'feedbacks' => $feedbacks,
+        ]);
     }
 
     /**

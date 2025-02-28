@@ -14,11 +14,11 @@ class SubscriberController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return back()->withErrors($validator);
+            return redirect('/');
         }
 
         Subscriber::create(['email' => $request->email]);
 
-        return back()->with('success', 'Subscribed successfully!');
+        return redirect('/');
     }
 }

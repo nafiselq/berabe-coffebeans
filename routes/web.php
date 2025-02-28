@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\FeedbackController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -14,6 +15,14 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [AboutusController::class, 'index']);
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
+
+//Subscriber
+Route::post('/subscribe', [SubscriberController::class, 'store'])->name('subscribe');
+
+
+//Feedback
+Route::get('/feedback',[FeedbackController::class, 'index'])->name('feedback.index');
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -29,10 +38,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-
-    //Subscriber
-    Route::post('/subscribe', [SubscriberController::class, 'store'])->name('subscribe');
 });
 
 require __DIR__.'/auth.php';

@@ -12,6 +12,7 @@ import { defineProps } from 'vue';
 
 const props = defineProps({
     products: Object,
+    feedbacks: Object,
 });
 </script>
 
@@ -23,7 +24,7 @@ const props = defineProps({
        <OurProductSection :products="products" />
        <DifferentSection />
        <AmazingSection />
-       <FeedbackSection />
+       <FeedbackSection :feedbacks="feedbacks" />
        <FooterSection />
     </PublicLayout>
 </template>

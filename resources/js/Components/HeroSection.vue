@@ -1,3 +1,7 @@
+<script setup>
+import BaseButton from './BaseButton.vue';
+</script>
+
 <template>
      <section class="relative bg-[url('/img/coffee_image.png')] bg-no-repeat bg-cover bg-center md:h-screen md:h-screen h-[595px]">
             <div class="absolute inset-0 bg-gradient-to-r from-black/100 to-transparent"></div>
