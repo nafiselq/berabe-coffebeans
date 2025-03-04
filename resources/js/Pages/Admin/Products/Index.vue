@@ -9,27 +9,29 @@ const props = defineProps({
 });
 
 const createProduct = () => {
-    router.visit('/product/create');
+    router.visit('/admin/product/create');
 };
 
 const editProduct = (product) => {
-    router.visit(`/product/${product.id}/edit`);
+    router.visit(`/admin/product/${product.id}/edit`);
 };
 
 const deleteProduct = (id) => {
     if (confirm('Are you sure you want to delete this product?')) {
-        router.delete(`/product/${id}`);
+        router.delete(`/admin/product/${id}`);
     }
 };
 
 const fetchPage = (url) => {
     router.visit(url);
 };
+
+console.log("ini product: ", props.products);
 </script>
 
 <template>
 
-    <Head title="Dashboard" />
+    <Head title="Products" />
 
     <AuthenticatedLayout>
         <template #header>
@@ -71,7 +73,7 @@ const fetchPage = (url) => {
                     </table>
                     <div class="mt-4">
                         <button v-if="products.prev_page_url" @click="fetchPage(products.prev_page_url)"
-                            class="px-4 py-2 bg-gray-500 text-white rounded">Previous</button>
+                            class="px-4 py-2 bg-gray-500 text-white rounded mr-3">Previous</button>
                         <button v-if="products.next_page_url" @click="fetchPage(products.next_page_url)"
                             class="px-4 py-2 bg-gray-500 text-white rounded">Next</button>
                     </div>

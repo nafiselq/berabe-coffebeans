@@ -11,9 +11,18 @@ class AboutusController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+
+    public function indexAdmin()
+    {
+        $about = Aboutus::first();
+        return Inertia::render('Admin/About/Edit', ['about' => $about]);
+    }
+
     public function index()
     {
-        return Inertia::render('About/Index');
+        $about = Aboutus::first();
+        return Inertia::render('About/Index', ['about' => $about]);
     }
 
     /**
@@ -51,9 +60,20 @@ class AboutusController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Aboutus $aboutus)
+    public function update(Request $request, string $id)
     {
-        //
+        $about = Aboutus::findOrFail($id);
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string'
+        ]);
+
+        $about->update([
+            'title' => $request->title,
+            'content' => $request->content,
+        ]);
+
+        return redirect()->route('admin.about');
     }
 
     /**

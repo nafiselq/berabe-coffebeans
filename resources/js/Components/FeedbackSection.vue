@@ -40,7 +40,6 @@ onUnmounted(() => {
 });
 
 
-console.log(props.feedbacks);
 </script>
 
 <template>
@@ -53,7 +52,7 @@ console.log(props.feedbacks);
             <p class="text-grey text-[20px] md:mt-[16px] md:text-[25px] text-[15px]">Our customers has amazing things to
                 say about us</p>
             <div class="md:mt-[45px] mt-[20px]">
-                <div
+                <div v-if="feedbacks.length > 0"
                     class="bg-secondary-orange md:px-[100px] md:py-[110px] md:w-6xl w-full flex flex-col items-center justify-center">
                     <transition name="fade" mode="out-in">
                         <p :key="feedbacks[currentIndex].id"
@@ -69,6 +68,11 @@ console.log(props.feedbacks);
                             alt="User Feedback Image" />
                     </div>
                     <img class="md:absolute md:block hidden left-[350px] top-[200px]" src="/img/petik.png" />
+                </div>
+                <div v-else>
+                    <div class="bg-orange rounded-lg p-10">
+                        <h4 class="text-black font-sans text-3xl">There is no feedback now</h4>
+                    </div>
                 </div>
             </div>
         </div>

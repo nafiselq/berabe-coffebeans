@@ -14,12 +14,13 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return Inertia::render('Product/Index');
+        $products = Product::all();
+        return Inertia::render('Product/Index', ['products' => $products]);
     }
 
     public function indexAdmin()
     {
-        $products = Product::paginate(10);
+        $products = Product::paginate(5);
         return Inertia::render('Admin/Products/Index', ['products' => $products]);
     }
 
@@ -43,14 +44,14 @@ class ProductController extends Controller
         ]);
 
         $imagePath = $request->file('image')?->store('product', 'public');
-        
+
         Product::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'photo' => $imagePath,
         ]);
 
-        return redirect()->route('product');
+        return redirect()->route('admin.product');
     }
 
     /**
@@ -94,7 +95,7 @@ class ProductController extends Controller
             'photo' => $product->photo,
         ]);
 
-        return redirect()->route('product');
+        return redirect()->route('admin.product');
     }
 
     /**
@@ -106,6 +107,6 @@ class ProductController extends Controller
         $product->delete();
 
 
-        return redirect()->route('product');
+        return redirect()->route('admin.product');
     }
 }

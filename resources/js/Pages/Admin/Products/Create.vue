@@ -3,7 +3,7 @@
         <div class="py-12">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div>
-                    <NavLink :href="route('product')" :active="route().current('product')">
+                    <NavLink :href="route('admin.product')" :active="route().current('admin.product')">
                     ⬅ Back to Product
                     </NavLink>
                     <h1 class="text-2xl font-bold mt-12">Create Product</h1>
@@ -33,6 +33,7 @@ import { ref } from 'vue';
 import { router } from '@inertiajs/vue3';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import NavLink from '@/Components/NavLink.vue';
+import { showError, showSuccess } from '@/utils/swal';
 
 const form = ref({
     title: '',
@@ -52,6 +53,14 @@ const submit = () => {
     if (form.value.image) {
         formData.append('image', form.value.image);
     }
-    router.post('/product', formData);
+    router.post(`/admin/product`, formData, {
+        onSuccess: () => {
+            showSuccess("Successfully create product!");
+        },
+        onError: (errors) => {
+            console.log("ini error s: ", errors);
+            showError("Something went wrong!");
+        }
+    })
 };
 </script>

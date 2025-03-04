@@ -40,10 +40,16 @@ const showingNavigationDropdown = ref(false);
                                     Dashboard
                                 </NavLink>
                                 <NavLink
-                                    :href="route('product')"
-                                    :active="route().current('product')"
+                                    :href="route('admin.product')"
+                                    :active="route().current('admin.product')"
                                 >
                                     Products
+                                </NavLink>
+                                <NavLink
+                                    :href="route('admin.about')"
+                                    :active="route().current('admin.about')"
+                                >
+                                    About Content
                                 </NavLink>
                             </div>
                         </div>
@@ -77,11 +83,6 @@ const showingNavigationDropdown = ref(false);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink
-                                            :href="route('profile.edit')"
-                                        >
-                                            Profile
-                                        </DropdownLink>
                                         <DropdownLink
                                             :href="route('logout')"
                                             method="post"
@@ -170,9 +171,6 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('profile.edit')">
-                                Profile
-                            </ResponsiveNavLink>
                             <ResponsiveNavLink
                                 :href="route('logout')"
                                 method="post"

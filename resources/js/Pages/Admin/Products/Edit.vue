@@ -3,7 +3,7 @@
         <div class="py-12">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div>
-                    <NavLink :href="route('product')" :active="route().current('product')">
+                    <NavLink :href="route('admin.product')" :active="route().current('admin.product')">
                         ⬅ Back to Product
                     </NavLink>
                     <h1 class="text-2xl font-bold mt-12">Edit Product</h1>
@@ -58,6 +58,6 @@ const submit = () => {
     if (form.value.image) {
         formData.append('image', form.value.image);
     }
-    router.post(`/product/${props.product.id}`, formData);
+    router.post(`/admin/product/${props.product.id}`, formData);
 };
 </script>
