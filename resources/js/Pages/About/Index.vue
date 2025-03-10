@@ -22,10 +22,10 @@ console.log("ini about : ", props.about);
 
             <!-- Text Content -->
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-                <h1 class="text-white text-[30px] md:text-7xl">Get to Know Insight</h1>
-                <p class="text-white md:text-xl mt-[30px]">Who we are and what we do goes far beyond providing coffee
-                    solutions.</p>
-                <p class="text-white md:text-sm mt-[5px]">Learn how we're making a difference in the world around us</p>
+                <h1 class="text-white text-[30px] md:text-7xl">Get to know us</h1>
+                <p class="text-white md:text-xl mt-[30px] w-[50%]">We started operating in Indonesia in 2022 and became an official company in 2024. We are engaged in the wholesale of agricultural, plantation, livestock, and fishery commodities and their processed products, both in the form of raw materials and finished products.
+                </p>
+                <!-- <p class="text-white md:text-sm mt-[5px]">Learn how we're making a difference in the world around us</p> -->
             </div>
         </section>
 

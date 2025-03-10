@@ -17,6 +17,10 @@
                             <input v-model="form.subtitle" type="text" class="w-full p-2 border rounded" required>
                         </div>
                         <div class="mb-4">
+                            <label class="block">Description:</label>
+                            <textarea v-model="form.desc" type="text" class="w-full p-2 border rounded" colspan='3' required></textarea>
+                        </div>
+                        <div class="mb-4">
                             <label class="block">Photo:</label>
                             <input type="file" @change="handleFileChange" class="w-full p-2 border rounded">
                         </div>
@@ -38,6 +42,7 @@ import { showError, showSuccess } from '@/utils/swal';
 const form = ref({
     title: '',
     subtitle: '',
+    desc: '',
     image: null,
 });
 

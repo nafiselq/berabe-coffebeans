@@ -30,8 +30,16 @@ console.log("ini product: ", props.products);
 </script>
 
 <template>
-
-    <Head title="Products" />
+    <Head>
+        <title>Products</title>
+        <meta name="description" content="Enjoy premium coffee from Berabe Coffee. 100% authentic Indonesian coffee, processed with the highest standards. Order now and experience perfection in every sip!">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="Products">
+        <meta property="og:description" content="Enjoy premium coffee from Berabe Coffee. 100% authentic Indonesian coffee, processed with the highest standards. Order now and experience perfection in every sip!">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/your-image.jpg">
+        <meta property="og:url" content="https://karyamudacontinental.com">
+    </Head>
 
     <AuthenticatedLayout>
         <template #header>

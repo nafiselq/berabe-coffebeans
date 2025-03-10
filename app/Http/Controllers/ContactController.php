@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 
 class ContactController extends Controller
@@ -29,7 +32,21 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'message' => 'required|string'
+        ]);
+
+        $validate['name'] = strip_tags($validate['name']);
+        $validate['message'] = strip_tags($validate['message']);
+
+
+        $contact = Contact::create($validate);
+
+        Mail::to('info@karyamudacontinental.com')->send(new ContactMail($contact));
+
+        return redirect()->route('contact.index')->with('success', 'Message sent successfully!');
     }
 
     /**

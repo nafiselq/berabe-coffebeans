@@ -15,7 +15,8 @@ use Inertia\Inertia;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [AboutusController::class, 'index']);
 Route::get('/products', [ProductController::class, 'index']);
-Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 //Subscriber
 Route::post('/subscribe', [SubscriberController::class, 'store'])->name('subscribe');

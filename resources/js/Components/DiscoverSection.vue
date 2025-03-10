@@ -11,9 +11,9 @@ import BaseButton from './BaseButton.vue';
                 <p class="mt-[28px] md:w-[585px] text-grey text-[20px]">
                     We have the best Indonesian Coffee Beans. Planted in the fertile tropical soil of Indonesia ensures the best quality coffee beans. Come check our product availability.
                 </p>
-                <div class="mt-[29px]">
+                <!-- <div class="mt-[29px]">
                     <BaseButton label="Learn More" variant="primary" size="md" />
-                </div>
+                </div> -->
             </div>
             <img src="/img/logo-kopi.png" class="md:w-[50%] w-[70%]"/>
             <img class="absolute left-[-75px] bottom-[-50px]" src="/img/logo-tumpahan-coffe-1.png"/>

@@ -4,11 +4,9 @@
             <div class="flex flex-col">
                 <p class="font-clicker text-white md:text-[54px] text-[30px]">Berabe Coffee</p>
                 <p class="w-[380px] mt-[20px] text-white text-[14px]">A cup of coffee in the morning with authentic Indonesian coffee beans can make your day better. Another cup in the afternoon completes your day.</p>
-                <div class="flex flex-row justify-between w-[156px] mt-[20px]">
-                    <img src="/img/fb.png"/>
-                    <img src="/img/ig.png"/>
+                <div class="flex flex-row w-[156px] mt-[20px]">
+                    <img class="mr-[10px]" src="/img/ig.png"/>
                     <img src="/img/yt.png"/>
-                    <img src="/img/tw.png"/>
                 </div>
             </div>
             <!-- <div class="flex flex-col">
@@ -23,19 +21,18 @@
             <div class="flex flex-col md:mt-0 mt-[50px]">
                 <p class="font-sans text-white text-[26px]">Company</p>
                 <ul class="md:mt-[55px] mt-[20px] space-y-5">
+                    <li class="text-white"><a href="/about-us">PT. Karya Muda Continental</a></li>
                     <li class="text-white"><a href="#">How we work</a></li>
                     <li class="text-white"><a href="#">Terms of service</a></li>
-                    <li class="text-white"><a href="#">Pricing</a></li>
-                    <li class="text-white"><a href="#">Pricing</a></li>
                 </ul>
             </div>
             <div class="flex flex-col md:mt-0 mt-[50px]">
                 <p class="font-sans text-white text-[26px]">Contact Us</p>
                 <ul class="md:mt-[55px] mt-[20px] space-y-5">
-                    <li class="text-white">Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016</li>
-                    <li class="text-white">+1 202-918-2132</li>
-                    <li class="text-white">beanscene@mail.com</li>
-                    <li class="text-white">www.beanscene.com</li>
+                    <li class="text-white">Daud Street No. 60, Jakarta, Indonesia</li>
+                    <li class="text-white">+62 821-1785-9909</li>
+                    <li class="text-white">karyamudacontinental@gmail.com</li>
+                    <li class="text-white">www.karyamudacontinental.com</li>
                 </ul>
             </div>
         </div>

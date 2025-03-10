@@ -17,9 +17,9 @@ import BaseButton from './BaseButton.vue';
                 </p>
                 <p class="md:w-[527px] text-white md:text-[20px] text-[12px]"
                 >A cup of coffee in the morning with authentic Indonesian coffee beans can make your day better. Another cup in the afternoon completes your day.</p>
-                <div class="mt-[20px]">
+                <!-- <div class="mt-[20px]">
                     <BaseButton label="Order Now" variant="primary" size="md" />
-                </div>
+                </div> -->
             </div>
         </section>
 </template>

@@ -40,8 +40,16 @@ const submit = () => {
 </script>
 
 <template>
-
-    <Head title="Feedback" />
+    <Head>
+        <title>Feedback</title>
+        <meta name="description" content="Enjoy premium coffee from Berabe Coffee. 100% authentic Indonesian coffee, processed with the highest standards. Order now and experience perfection in every sip!">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="Feedback">
+        <meta property="og:description" content="Enjoy premium coffee from Berabe Coffee. 100% authentic Indonesian coffee, processed with the highest standards. Order now and experience perfection in every sip!">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/your-image.jpg">
+        <meta property="og:url" content="https://karyamudacontinental.com">
+    </Head>
     <PublicLayout>
         <section class="relative bg-[url('/img/coffee_image.png')] bg-no-repeat bg-cover bg-center h-[90px]">
             <div class="absolute inset-0 bg-black opacity-90"></div>

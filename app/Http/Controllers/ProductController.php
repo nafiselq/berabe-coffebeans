@@ -40,6 +40,7 @@ class ProductController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string|max:255',
+            'desc' => 'required|string',
             'image' => 'required|image|max:2048'
         ]);
 
@@ -48,6 +49,7 @@ class ProductController extends Controller
         Product::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
+            'desc' => $request->desc,
             'photo' => $imagePath,
         ]);
 
@@ -81,6 +83,7 @@ class ProductController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string|max:255',
+            'desc' => 'required|string',
             'image' => 'nullable|image|max:2048'
         ]);
 
@@ -92,6 +95,7 @@ class ProductController extends Controller
         $product->update([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
+            'desc' => $request->desc,
             'photo' => $product->photo,
         ]);
 

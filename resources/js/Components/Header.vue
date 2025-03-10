@@ -3,8 +3,8 @@
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <!-- Logo -->
       <div class="flex flex-col">
-        <h1 class="text-white text-[20px]">PT. Karya Muda Continental</h1>
-        <h1 class="text-white text-[35px] font-clicker">Berabe Coffee</h1>
+        <!-- <h1 class="text-white text-[20px]">PT. Karya Muda Continental</h1> -->
+        <h1 class="text-white text-[40px] font-clicker">Berabe Coffee</h1>
       </div>
 
       <!-- Hamburger Menu (Mobile) -->
@@ -36,7 +36,7 @@
 
       <!-- Instagram Button -->
       <div class="hidden md:flex">
-        <BaseButton label="Instagram" variant="primary" size="md" />
+        <!-- <BaseButton label="Instagram" variant="primary" size="md" /> -->
       </div>
     </div>
 

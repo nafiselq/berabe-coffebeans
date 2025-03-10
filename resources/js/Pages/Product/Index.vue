@@ -10,7 +10,16 @@ const props = defineProps({
 </script>
 
 <template>
-    <Head title="Products" />
+    <Head>
+        <title>Products</title>
+        <meta name="description" content="Enjoy premium coffee from Berabe Coffee. 100% authentic Indonesian coffee, processed with the highest standards. Order now and experience perfection in every sip!">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="Products">
+        <meta property="og:description" content="Enjoy premium coffee from Berabe Coffee. 100% authentic Indonesian coffee, processed with the highest standards. Order now and experience perfection in every sip!">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/your-image.jpg">
+        <meta property="og:url" content="https://karyamudacontinental.com">
+    </Head>
     <PublicLayout>
         <!-- Hero Section -->
         <section class="relative bg-[url('/img/coffee_image.png')] bg-no-repeat bg-cover bg-center h-[90px]">
@@ -29,6 +38,7 @@ const props = defineProps({
                     :key="product.id"
                     :title="product.title"
                     :subTitle="product.subtitle"
+                    :desc="product.desc"
                     :image="product.photo"
                 />
             </div>
