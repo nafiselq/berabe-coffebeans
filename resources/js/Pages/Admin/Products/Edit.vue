@@ -55,6 +55,7 @@ const submit = () => {
     const formData = new FormData();
     formData.append('title', form.value.title);
     formData.append('subtitle', form.value.subtitle);
+    formData.append('desc', form.value.desc);
     if (form.value.image) {
         formData.append('image', form.value.image);
     }
