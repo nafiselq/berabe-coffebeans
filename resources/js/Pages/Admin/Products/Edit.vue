@@ -17,6 +17,10 @@
                             <input v-model="form.subtitle" type="text" class="w-full p-2 border rounded" required>
                         </div>
                         <div class="mb-4">
+                            <label class="block">Description:</label>
+                            <textarea v-model="form.desc" type="text" class="w-full p-2 border rounded" colspan='3' required></textarea>
+                        </div>
+                        <div class="mb-4">
                             <label class="block">Image:</label>
                             <input type="file" @change="handleFileChange" class="w-full p-2 border rounded">
                             <img v-if="form.photo" :src="`/storage/${form.photo}`" class="w-16 h-16 mt-2" />
@@ -34,6 +38,7 @@ import { ref, defineProps } from 'vue';
 import { router } from '@inertiajs/vue3';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import NavLink from '@/Components/NavLink.vue';
+import { showError, showSuccess } from '@/utils/swal';
 
 
 const props = defineProps({
@@ -43,6 +48,7 @@ const props = defineProps({
 const form = ref({
     title: props.product.title,
     subtitle: props.product.subtitle,
+    desc: props.product.desc,
     photo: props.product.photo,
     image: null,
 });
@@ -59,6 +65,14 @@ const submit = () => {
     if (form.value.image) {
         formData.append('image', form.value.image);
     }
-    router.post(`/admin/product/${props.product.id}`, formData);
+    router.post(`/admin/product/${props.product.id}`, formData, {
+        onSuccess: () => {
+            showSuccess("Successfully update product!");
+        },
+        onError: (errors) => {
+            console.log("ini error s: ", errors);
+            showError("Something went wrong!");
+        }
+    })
 };
 </script>

@@ -22,8 +22,7 @@
                 <p class="font-sans text-white text-[26px]">Company</p>
                 <ul class="md:mt-[55px] mt-[20px] space-y-5">
                     <li class="text-white"><a href="/about-us">PT. Karya Muda Continental</a></li>
-                    <li class="text-white"><a href="#">How we work</a></li>
-                    <li class="text-white"><a href="#">Terms of service</a></li>
+                <li class="text-white"><a href="/terms-of-service">Terms of service</a></li>
                 </ul>
             </div>
             <div class="flex flex-col md:mt-0 mt-[50px]">
@@ -31,7 +30,7 @@
                 <ul class="md:mt-[55px] mt-[20px] space-y-5">
                     <li class="text-white">Daud Street No. 60, Jakarta, Indonesia</li>
                     <li class="text-white">+62 821-1785-9909</li>
-                    <li class="text-white">karyamudacontinental@gmail.com</li>
+                    <li class="text-white">info@karyamudacontinental.com</li>
                     <li class="text-white">www.karyamudacontinental.com</li>
                 </ul>
             </div>

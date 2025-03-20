@@ -17,6 +17,13 @@ class FeedbackController extends Controller
         return Inertia::render('Feedback/Index');
     }
 
+    public function indexAdmin()
+    {
+        $feedbacks = Feedback::paginate(5);
+        return Inertia::render('Admin/Feedback/Index', ['feedbacks' => $feedbacks]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
@@ -81,6 +88,10 @@ class FeedbackController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $feedbacks = Feedback::findOrFail($id);
+        $feedbacks->delete();
+
+
+        return redirect()->route('admin.feedback');
     }
 }

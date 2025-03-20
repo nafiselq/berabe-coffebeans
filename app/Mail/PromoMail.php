@@ -2,27 +2,27 @@
 
 namespace App\Mail;
 
-use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
-class ContactMail extends Mailable
+class PromoMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public Contact $contact;
+    public $title;
+    public $content;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(Contact $contact)
+    public function __construct($title, $content)
     {
-        $this->contact = $contact;
+        $this->title = $title;
+        $this->content = $content;
     }
 
     /**
@@ -31,8 +31,7 @@ class ContactMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address($this->contact->email, $this->contact->name), // Set email pengguna sebagai "From"
-            subject: 'New Contact Message from ' . $this->contact->name
+            subject: $this->title, // Menggunakan title sebagai subject email
         );
     }
 
@@ -42,10 +41,11 @@ class ContactMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.contact',
+            view: 'emails.promo', // Gunakan blade template 'emails.promo'
             with: [
-                'contact' => $this->contact
-            ]
+                'title' => $this->title,
+                'content' => $this->content,
+            ],
         );
     }
 

@@ -51,6 +51,18 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     About Content
                                 </NavLink>
+                                <NavLink
+                                    :href="route('admin.feedback')"
+                                    :active="route().current('admin.feedback')"
+                                >
+                                    Feedbacks
+                                </NavLink>
+                                <NavLink
+                                    :href="route('admin.promo')"
+                                    :active="route().current('admin.promo')"
+                                >
+                                    Promo
+                                </NavLink>
                             </div>
                         </div>
 

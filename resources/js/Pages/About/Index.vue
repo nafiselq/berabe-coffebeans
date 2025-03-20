@@ -8,8 +8,6 @@ const props = defineProps({
     'about': Object
 });
 
-console.log("ini about : ", props.about);
-
 </script>
 
 <template>
